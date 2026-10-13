@@ -1,7 +1,7 @@
 models:
-  groq-llama:
-    name: groq/llama-3.3-70b-versatile
-    key_env: GROQ_API_KEY
+  # groq-llama:
+  #   name: groq/llama-3.3-70b-versatile
+  #   key_env: GROQ_API_KEY
   gpt-5-mini:
     name: openai/gpt-5-mini
     key_env: OPENAI_API_KEY
@@ -17,17 +17,23 @@ models:
   claude-opus:
     name: anthropic/claude-opus-5-5
     key_env: ANTHROPIC_API_KEY
-  grok:
-    name: xai/grok-4
-    key_env: XAI_API_KEY
-  grok-code:
-    name: xai/grok-code-fast-1
-    key_env: XAI_API_KEY
+  # grok:
+  #   name: xai/grok-4
+  #   key_env: XAI_API_KEY
+  # grok-code:
+  #   name: xai/grok-code-fast-1
+  #   key_env: XAI_API_KEY
 
 routes:
-  classify: [groq-llama, gpt-5-mini, claude-haiku]
-  chat: [groq-llama, gpt-5-mini, claude-haiku]
-  coding: [claude-sonnet, gpt-5, grok-code]
+  classify: [gpt-5-mini, claude-haiku]
+  chat: [gpt-5-mini, claude-haiku]
+  coding: [claude-sonnet, gpt-5]
   design: [claude-opus, claude-sonnet, gpt-5]
-  complex: [claude-opus, gpt-5, claude-sonnet, grok]
-  planning: [claude-opus, gpt-5, claude-sonnet, grok]
+  complex: [claude-opus, gpt-5, claude-sonnet]
+  planning: [claude-opus, gpt-5, claude-sonnet]
+  # classify: [groq-llama, gpt-5-mini, claude-haiku]
+  # chat: [groq-llama, gpt-5-mini, claude-haiku]
+  # coding: [claude-sonnet, gpt-5, grok-code]
+  # design: [claude-opus, claude-sonnet, gpt-5]
+  # complex: [claude-opus, gpt-5, claude-sonnet, grok]
+  # planning: [claude-opus, gpt-5, claude-sonnet, grok]
